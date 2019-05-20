@@ -1,0 +1,29 @@
+.user-list-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user-list-filter {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  box-sizing: border-box;
+  border: 2px solid #ddd;
+
+  @media only screen and (max-width: 600px) {
+    margin: 0.25rem;
+    padding: 0.25rem;
+  }
+
+  &:focus-within {
+    border: 2px solid #ff7f00;
+  }
+  .user-list-filter-input {
+    flex-grow: 1;
+    font-size: 0.9rem;
+    outline: none;
+    border: 0;
+    padding-left: 0.3rem;
+  }
+}
