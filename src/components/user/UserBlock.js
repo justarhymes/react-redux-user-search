@@ -9,7 +9,6 @@ import '../../scss/UserBlock.scss';
 class UserBlock extends Component {
   render() {
     if (this.props.currentUser) {
-      console.log(this.props.currentUser);
       const backgroundStyle = {
         backgroundImage: `url(${this.props.currentUser.picture.large})`,
       }

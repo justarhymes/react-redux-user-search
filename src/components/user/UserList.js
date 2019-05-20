@@ -17,7 +17,6 @@ class UserList extends Component {
       value: '',
       searchData: _.values(props.userList)
     };
-    console.log(this.state.searchData)
   }
 
   _handleChange = event => {
