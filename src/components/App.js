@@ -6,6 +6,7 @@ import {
 import { connect } from 'react-redux';
 import { fetchUsers } from '../actions';
 
+import ScrollToTop from './ScrollToTop';
 import UserList from './user/UserList';
 import UserBlock from './user/UserBlock';
 
@@ -45,20 +46,22 @@ class App extends Component {
     if (!this.props.users) return null;
     return (
       <Router>
-        <div className="section-wrap">
-          <section className="user-block">
-            { this.renderUserBlock() }
-          </section>
-          <UserList 
-            userList={ this.props.users } 
-            selectedUser={ this.state.selectedUser }
-            onUserSelect={ 
-              selectedUser => {
-                this.setState({selectedUser});
+        <ScrollToTop>
+          <div className="section-wrap">
+            <section className="user-block">
+              { this.renderUserBlock() }
+            </section>
+            <UserList 
+              userList={ this.props.users } 
+              selectedUser={ this.state.selectedUser }
+              onUserSelect={ 
+                selectedUser => {
+                  this.setState({selectedUser});
+                }
               }
-            }
-          />
-        </div>
+            />
+          </div>
+        </ScrollToTop>
       </Router>
     );
   }
